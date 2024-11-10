@@ -27,8 +27,8 @@ importers:
   example:
     dependencies:
       '@akoenig/effect-remix':
-        specifier: npm:@jsr/akoenig__effect-remix@^0.1.1
-        version: '@jsr/akoenig__effect-remix@0.1.1(typescript@5.6.3)'
+        specifier: npm:@jsr/akoenig__effect-remix@^0.1.2
+        version: '@jsr/akoenig__effect-remix@0.1.2(typescript@5.6.3)'
       '@remix-run/node':
         specifier: ^2.14.0
         version: 2.14.0(typescript@5.6.3)
@@ -729,8 +729,8 @@ packages:
   '@jspm/core@2.1.0':
     resolution: {integrity: sha512-3sRl+pkyFY/kLmHl0cgHiFp2xEqErA8N3ECjMs7serSUBmoJ70lBa0PG5t0IM6WJgdZNyyI0R8YFfi5wM8+mzg==}
 
-  '@jsr/akoenig__effect-remix@0.1.1':
-    resolution: {integrity: sha512-wouusOnZo/H2Z9dQFn4FFATIGXamrkoFhIouEVmoeaFMniakx6DDhOMNOWtqPufUA9UgTTYVBSsY0F0EWekpEg==, tarball: https://npm.jsr.io/~/11/@jsr/akoenig__effect-remix/0.1.1.tgz}
+  '@jsr/akoenig__effect-remix@0.1.2':
+    resolution: {integrity: sha512-QIMnq1oA+qAKCT7ztiY37uwBY3D86Ht+FPc53wHS0cqxBNMHXJ2H42gfuD7dHgOz2lV5wbRMd04Q/OzeGKqmjw==, tarball: https://npm.jsr.io/~/11/@jsr/akoenig__effect-remix/0.1.2.tgz}
 
   '@mdx-js/mdx@2.3.0':
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
@@ -3526,7 +3526,7 @@ snapshots:
 
   '@jspm/core@2.1.0': {}
 
-  '@jsr/akoenig__effect-remix@0.1.1(typescript@5.6.3)':
+  '@jsr/akoenig__effect-remix@0.1.2(typescript@5.6.3)':
     dependencies:
       '@remix-run/node': 2.14.0(typescript@5.6.3)
       effect: 3.10.13
