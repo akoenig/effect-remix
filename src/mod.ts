@@ -1,7 +1,7 @@
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import type { ManagedRuntime } from "effect";
 
-import { Effect } from "effect";
+import { Effect, Match } from "effect";
 import { Context, Layer } from "effect";
 
 export class LoaderArguments extends Context.Tag(
@@ -23,6 +23,9 @@ export class ActionArguments extends Context.Tag(
 		readonly params: ActionFunctionArgs["params"];
 	}
 >() {}
+
+type LoaderVerb = "HEAD" | "GET";
+type ActionVerb = "POST" | "PUT" | "DELETE";
 
 export function Remix<R>(runtime: ManagedRuntime.ManagedRuntime<R, unknown>) {
 	function createLoader<A, RF>(
@@ -55,5 +58,55 @@ export function Remix<R>(runtime: ManagedRuntime.ManagedRuntime<R, unknown>) {
 		};
 	}
 
-	return { createLoader, createAction } as const;
+	function matchLoader(
+		handler: Partial<Record<LoaderVerb, ReturnType<typeof createLoader>>>,
+	) {
+		return (args: LoaderFunctionArgs) => {
+			const verb = args.request.method as LoaderVerb;
+
+			const match = Match.type<LoaderVerb>().pipe(
+				Match.when("HEAD", () => handler.HEAD),
+				Match.when("GET", () => handler.GET),
+				Match.exhaustive,
+			);
+
+			const loader = match(verb);
+
+			if (!loader) {
+				throw new Response("Method not Allowed", { status: 405 });
+			}
+
+			return loader(args);
+		};
+	}
+
+	function matchActions(
+		actions: Partial<Record<ActionVerb, ReturnType<typeof createAction>>>,
+	) {
+		return (args: ActionFunctionArgs) => {
+			const verb = args.request.method as ActionVerb;
+
+			const match = Match.type<ActionVerb>().pipe(
+				Match.when("POST", () => actions.POST),
+				Match.when("PUT", () => actions.PUT),
+				Match.when("DELETE", () => actions.DELETE),
+				Match.exhaustive,
+			);
+
+			const action = match(verb);
+
+			if (!action) {
+				throw new Response("Method Not Allowed", { status: 405 });
+			}
+
+			return action(args);
+		};
+	}
+
+	return {
+		createLoader,
+		createAction,
+		matchLoader,
+		matchActions,
+	} as const;
 }
