@@ -5,10 +5,9 @@ import { RandomNumberService } from "app/services/random-number-service";
 
 export const loader = createLoader(
 	Effect.gen(function* () {
-		const { request } = yield* LoaderArguments;
 		const randomNumberService = yield* RandomNumberService;
 
-		return { currentNumber: yield* randomNumberService.next() };
+		return { productId: yield* randomNumberService.next() };
 	}),
 );
 
