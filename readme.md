@@ -6,6 +6,7 @@ Abstraction layer which lets you use Effect within your Remix-based application.
 
 The package is hosted on JSR. You can install it via:
 
+```sh
 # pnpm
 pnpm dlx jsr add @akoenig/effect-remix
 
@@ -20,6 +21,7 @@ npx jsr add @akoenig/effect-remix
 
 # yarn
 yarn dlx jsr add @akoenig/effect-remix
+```
 
 ## Usage
 
