@@ -8,6 +8,8 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
+		"@akoenig/effect-remix": "npm:@jsr/akoenig__effect-remix@^0.1.1",
+		"effect": "^3.10.13",
 		"@remix-run/node": "^2.14.0",
 		"@remix-run/react": "^2.14.0",
 		"@remix-run/serve": "^2.14.0",

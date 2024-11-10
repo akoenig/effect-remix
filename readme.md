@@ -25,7 +25,7 @@ yarn dlx jsr add @akoenig/effect-remix
 
 ## Usage
 
-You can find a simple usage example under `/example` in this repository.
+For a simple usage example, check the /example directory in this repository.
 
 First of all you have to initialize this layer by passing your application-specific layers. Create the file `~/app/effect.server.ts` within your Remix app and place the following content:
 
@@ -49,6 +49,8 @@ Afterwards, you can use the exported functions within your routes.
 
 ### `createLoader`
 
+You can create loaders using the `createLoader` function. Here's an example:
+
 ```ts
 export const loader = createLoader(Effect.gen(function* () {
   // Remix Loader Function Arguments: https://remix.run/docs/en/main/route/loader#loader
@@ -61,9 +63,9 @@ export const loader = createLoader(Effect.gen(function* () {
 }));
 ```
 
-Now, you can use the result within your view component via Remix's `useLoaderData` hook, like:
+In your view component, use Remix's `useLoaderData` hook to access the loader's result:
 
-```ts
+```tsx
 export default function MyView() {
   const { hello } = useLoaderData<typeof loader>();
 
@@ -74,6 +76,8 @@ export default function MyView() {
 ```
 
 ### `createAction`
+
+To handle form submissions or other actions, use the `createAction` function:
 
 ```ts
 export const action = createAction(Effect.gen(function* () {
@@ -87,9 +91,9 @@ export const action = createAction(Effect.gen(function* () {
 }));
 ```
 
-### `matchLoader`
+### Advanced Loaders with `matchLoader`
 
-Sometimes you want to have a more fine-grained control over the loader request. For example, you want to behave differently on certain HTTP methods. In the context of the loader, there are two possible HTTP methods: `HEAD` and `GET`.
+For more control over loader requests (e.g., handling different HTTP methods), use `matchLoader`:
 
 ```ts
 const GET = createLoader(Effect.gen(function* () {
@@ -103,13 +107,14 @@ const GET = createLoader(Effect.gen(function* () {
 }));
 
 export const loader = mountLoader({
-  GET
+  GET,
+  // or HEAD
 });
 ```
 
-### `matchActions`
+### Advanced Actions with `matchActions`
 
-Same goes for action requests.
+Similarly, you can define multiple actions using `matchActions`:
 
 ```ts
 export const POST = createAction(Effect.gen(function* () {

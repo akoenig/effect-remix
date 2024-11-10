@@ -7,29 +7,28 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@remix-run/node':
-        specifier: ^2.14.0
-        version: 2.14.0(typescript@5.6.3)
-      '@remix-run/react':
-        specifier: ^2.14.0
-        version: 2.14.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
-      effect:
-        specifier: ^3.10.13
-        version: 3.10.13
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
+      '@remix-run/node':
+        specifier: ^2.14.0
+        version: 2.14.0(typescript@5.6.3)
       '@tsconfig/node22':
         specifier: ^22.0.0
         version: 22.0.0
+      effect:
+        specifier: ^3.10.13
+        version: 3.10.13
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
 
   example:
     dependencies:
+      '@akoenig/effect-remix':
+        specifier: npm:@jsr/akoenig__effect-remix@^0.1.1
+        version: '@jsr/akoenig__effect-remix@0.1.1(typescript@5.6.3)'
       '@remix-run/node':
         specifier: ^2.14.0
         version: 2.14.0(typescript@5.6.3)
@@ -39,6 +38,9 @@ importers:
       '@remix-run/serve':
         specifier: ^2.14.0
         version: 2.14.0(typescript@5.6.3)
+      effect:
+        specifier: ^3.10.13
+        version: 3.10.13
       isbot:
         specifier: ^4
         version: 4.4.0
@@ -726,6 +728,9 @@ packages:
 
   '@jspm/core@2.1.0':
     resolution: {integrity: sha512-3sRl+pkyFY/kLmHl0cgHiFp2xEqErA8N3ECjMs7serSUBmoJ70lBa0PG5t0IM6WJgdZNyyI0R8YFfi5wM8+mzg==}
+
+  '@jsr/akoenig__effect-remix@0.1.1':
+    resolution: {integrity: sha512-wouusOnZo/H2Z9dQFn4FFATIGXamrkoFhIouEVmoeaFMniakx6DDhOMNOWtqPufUA9UgTTYVBSsY0F0EWekpEg==, tarball: https://npm.jsr.io/~/11/@jsr/akoenig__effect-remix/0.1.1.tgz}
 
   '@mdx-js/mdx@2.3.0':
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
@@ -3520,6 +3525,13 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
 
   '@jspm/core@2.1.0': {}
+
+  '@jsr/akoenig__effect-remix@0.1.1(typescript@5.6.3)':
+    dependencies:
+      '@remix-run/node': 2.14.0(typescript@5.6.3)
+      effect: 3.10.13
+    transitivePeerDependencies:
+      - typescript
 
   '@mdx-js/mdx@2.3.0':
     dependencies:

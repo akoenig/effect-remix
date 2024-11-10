@@ -27,7 +27,7 @@ export class ActionArguments extends Context.Tag(
 type LoaderVerb = "HEAD" | "GET";
 type ActionVerb = "POST" | "PUT" | "DELETE";
 
-export function Remix<R>(runtime: ManagedRuntime.ManagedRuntime<R, unknown>) {
+export function Remix<R>(runtime: ManagedRuntime.ManagedRuntime<R, never>) {
 	function createLoader<A, RF>(
 		effect: Effect.Effect<A, RF, R | LoaderArguments>,
 	) {
