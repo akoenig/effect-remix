@@ -19,7 +19,7 @@ importers:
         version: 22.0.0
       effect:
         specifier: ^3.10.13
-        version: 3.10.13
+        version: 3.10.14
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
@@ -40,7 +40,7 @@ importers:
         version: 2.14.0(typescript@5.6.3)
       effect:
         specifier: ^3.10.13
-        version: 3.10.13
+        version: 3.10.14
       isbot:
         specifier: ^4
         version: 4.4.0
@@ -1383,8 +1383,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  effect@3.10.13:
-    resolution: {integrity: sha512-7L8BGZldtMpXx5mw5MRTsnW6j4zpa+K6Rn2pU5CJ4LyH9jm2Hopfgaq3YurkTmv5HWpCQnhqCkMhbaSG3Nporw==}
+  effect@3.10.14:
+    resolution: {integrity: sha512-NtEeDltifeP6SX1JptGL+k1k6CDjB++Yc7enAKEj3Pd7/4Llb4CDgZybqyiyqBkGK805ZLOIkyAyELdoJpmcqg==}
 
   electron-to-chromium@1.5.55:
     resolution: {integrity: sha512-6maZ2ASDOTBtjt9FhqYPRnbvKU5tjG0IN9SztUOWYw2AzNDNpKJYLJmlK0/En4Hs/aiWnB+JZ+gW19PIGszgKg==}
@@ -3529,7 +3529,7 @@ snapshots:
   '@jsr/akoenig__effect-remix@0.1.2(typescript@5.6.3)':
     dependencies:
       '@remix-run/node': 2.14.0(typescript@5.6.3)
-      effect: 3.10.13
+      effect: 3.10.14
     transitivePeerDependencies:
       - typescript
 
@@ -4285,7 +4285,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  effect@3.10.13:
+  effect@3.10.14:
     dependencies:
       fast-check: 3.23.1
 
